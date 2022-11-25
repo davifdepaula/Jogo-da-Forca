@@ -4,7 +4,7 @@ import "./game.css"
 
 
 function Game(props) {
-  const {attempts, word, inGame, gameControl} = props
+  const {attempts, word, showUnderScore, inGame, gameControl} = props
 
   
   function showImg(){
@@ -23,7 +23,7 @@ function Game(props) {
             <div className='inGame'>
               <button onClick = {() => gameControl()}>Escolher Palavra</button>
               <div className='string'>
-                {"_\t".repeat(word.length)}
+                {showUnderScore}
               </div>
             </div>
 
