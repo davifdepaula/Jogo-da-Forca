@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './letters.css'
 
 
@@ -9,15 +9,14 @@ const alfabeto = ["a", "b", "c", "d", "e", "f",
                 ]
 
 function Letters(props) {
-  const {word, inGame, attempts, setAttempts, showUnderScore, setShowUnderScore} = props
-  const [isClicked, setIsClicked] = useState([])
-  console.log(word)
+  const {word, inGame, gameOver, setGameOver, attempts, setAttempts, showUnderScore, setShowUnderScore, isClicked, setIsClicked} = props
+
 function isInWord(letter){
 
   if(!isClicked.includes(letter)){
     if (word.includes(letter)){
     [...word].filter((element, index) => {
-      if (element == letter){
+      if (element === letter){
         showUnderScore[index] = letter
       }
     })
@@ -28,8 +27,18 @@ function isInWord(letter){
   }
     setIsClicked([...isClicked, letter])
 }
+  if(!showUnderScore.includes("_\t")) setGameOver(true)
 }
 
+function checkGameState(letter){
+  if(!gameOver){
+    if(attempts === 6) {
+      setGameOver(true)
+      setShowUnderScore(word)
+    }
+    else isInWord(letter)
+  }
+}
 
   return (
     <div className='keyBoard'>
@@ -37,7 +46,7 @@ function isInWord(letter){
             return (
                 <button 
                 key = {index}
-                onClick = {()=> {if(inGame) isInWord(letter)}}
+                onClick = {()=> checkGameState(letter)}
                 > {letter} </button>
             )
         })}

@@ -4,9 +4,36 @@ import "./game.css"
 
 
 function Game(props) {
-  const {attempts, word, showUnderScore, inGame, gameControl} = props
+  const {attempts, word, showUnderScore, inGame, gameControl, gameOver} = props
 
-  
+function showString(){
+  if(!gameOver){
+    return(
+      <div className="string">
+        {showUnderScore}
+      </div>
+    )
+  }
+
+  else {
+    if (attempts === 6){
+      console.log(attempts)
+      return (
+        <div className="red string">
+          {showUnderScore}
+        </div>
+    )
+    }
+    else {
+      console.log(attempts)
+      return (
+        <div className="green string">
+          {showUnderScore}
+        </div>
+      )
+    }
+  }
+}
   function showImg(){
     if (!inGame){
       return (
@@ -22,9 +49,7 @@ function Game(props) {
             <img src={`./assets/forca${attempts}.png`} alt = "img"/>
             <div className='inGame'>
               <button onClick = {() => gameControl()}>Escolher Palavra</button>
-              <div className='string'>
-                {showUnderScore}
-              </div>
+              {showString()}
             </div>
 
           </div>

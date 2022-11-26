@@ -1,12 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import "./guess.css"
 
-function Guess() {
+function Guess(props) {
+  const {word, setAttempts, setShowUnderScore, setGameOver } = props
+  const [kick, setKick] = useState("")
+
+  console.log(word)
+  function stateControl(){
+    setShowUnderScore(word)
+    setGameOver(true)
+    setKick("")
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (kick === word){
+      stateControl()
+    }
+    else {
+      setAttempts(6)
+      stateControl()
+    }
+
+  }
   return (
     <div className='kick'>
-        Já sei a palavra! <input />
-        <button>Chutar</button>
+      <form onSubmit={handleSubmit}>
+        Já sei a palavra! <input name="kick" type="text" value={kick} onChange={(e) => setKick(e.target.value)} />
+        <button type="submit">Chutar</button>
+      </form>
     </div>
   )
 }
