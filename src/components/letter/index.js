@@ -47,6 +47,7 @@ function checkGameState(letter){
                 <button 
                 key = {index}
                 onClick = {()=> checkGameState(letter)}
+                data-test="letter"
                 > {letter} </button>
             )
         })}

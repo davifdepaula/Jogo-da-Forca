@@ -27,8 +27,11 @@ function Guess(props) {
   return (
     <div className='kick'>
       <form onSubmit={handleSubmit}>
-        Já sei a palavra! <input name="kick" type="text" value={kick} onChange={(e) => setKick(e.target.value)} />
-        <button type="submit">Chutar</button>
+        Já sei a palavra! 
+        <input name="kick" type="text" value={kick} onChange={(e) => setKick(e.target.value)}
+        data-test="guess-input"
+        />
+        <button type="submit" data-test="guess-button">Chutar</button>
       </form>
     </div>
   )

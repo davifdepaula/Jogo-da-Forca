@@ -9,7 +9,7 @@ function Game(props) {
 function showString(){
   if(!gameOver){
     return(
-      <div className="string">
+      <div className="string" data-test="word"  data-answer={word}>
         {showUnderScore}
       </div>
     )
@@ -19,7 +19,7 @@ function showString(){
     if (attempts === 6){
       console.log(attempts)
       return (
-        <div className="red string">
+        <div className="red string" data-test="word"  data-answer={word}>
           {showUnderScore}
         </div>
     )
@@ -27,7 +27,7 @@ function showString(){
     else {
       console.log(attempts)
       return (
-        <div className="green string">
+        <div className="green string" data-test="word"  data-answer={word}>
           {showUnderScore}
         </div>
       )
@@ -38,15 +38,15 @@ function showString(){
     if (!inGame){
       return (
           <div className='forca'>
-            <img src={`./assets/forca${attempts}.png`} alt="" /> 
-            <button onClick = {() => gameControl()}>Escolher Palavra</button>
+            <img data-test="game-image" src={`./assets/forca${attempts}.png`} alt="" /> 
+            <button data-test="choose-word" onClick = {() => gameControl()}>Escolher Palavra</button>
           </div>
       )}
 
     else{
         return (
           <div className='forca'>
-            <img src={`./assets/forca${attempts}.png`} alt = "img"/>
+            <img src={`./assets/forca${attempts}.png`} alt = "img" data-test="game-image" />
             <div className='inGame'>
               <button onClick = {() => gameControl()}>Escolher Palavra</button>
               {showString()}
