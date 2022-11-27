@@ -45,7 +45,7 @@ function showString(){
           <div className='forca'>
             <img src={`./assets/forca${attempts}.png`} alt = "img" data-test="game-image" />
             <div className='inGame'>
-              <button onClick = {() => gameControl()}>Escolher Palavra</button>
+              <button data-test="choose-word" onClick = {() => gameControl()}>Escolher Palavra</button>
               {showString()}
             </div>
 
