@@ -44,7 +44,8 @@ function checkGameState(letter){
     <div className='keyBoard'>
         {alfabeto.map((letter, index) => {
             return (
-                <button disable = {`${!inGame}`} 
+                <button 
+                disabled = {!inGame || gameOver} 
                 key = {index}
                 onClick = {()=> checkGameState(letter)}
                 data-test="letter"
