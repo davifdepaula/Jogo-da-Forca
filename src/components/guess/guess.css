@@ -11,9 +11,18 @@
     font-size: 20px;
 }
 
+.kick input:disabled{
+    cursor: not-allowed;
+}
+
 .kick button {
     font-size: 20px;
     background-color: #E1ECF4;
     border: 1px solid #7AA7C7;
     color: #3C76A1;
+    cursor: pointer;
+}
+
+.kick button:disabled{
+    cursor: not-allowed;
 }

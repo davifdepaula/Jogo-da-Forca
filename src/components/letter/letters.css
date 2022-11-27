@@ -11,4 +11,9 @@
 .keyBoard button{
     width: 40px;
     height: 40px;
+    cursor: pointer;
+}
+
+.keyBoard button:disabled{
+    cursor: not-allowed;
 }

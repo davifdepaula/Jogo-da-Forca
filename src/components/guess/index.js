@@ -3,15 +3,14 @@ import React, {useState} from 'react'
 import "./guess.css"
 
 function Guess(props) {
-  const {word, setAttempts, setShowUnderScore, inGame, gameOver, setGameOver } = props
-  const [kick, setKick] = useState("")
+  const {word, setAttempts, kick, setKick, setShowUnderScore, inGame, gameOver, setGameOver } = props
   console.log(word)
   function stateControl(){
     setShowUnderScore(word)
     setGameOver(true)
     setKick("")
   }
-
+  
   function handleSubmit(e) {
     e.preventDefault()
     if (kick === word){
@@ -21,11 +20,11 @@ function Guess(props) {
       setAttempts(6)
       stateControl()
     }
-
+    console.log(kick)
   }
   return (
-    <div className='kick'>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
+      <div className='kick'>
         Já sei a palavra! 
         <input
         disabled = {!inGame || gameOver}
@@ -36,8 +35,8 @@ function Guess(props) {
         disabled = {!inGame || gameOver} 
         type="submit" 
         data-test="guess-button">Chutar</button>
-      </form>
-    </div>
+      </div>
+    </form>
   )
 }
 

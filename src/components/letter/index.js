@@ -10,9 +10,8 @@ const alfabeto = ["a", "b", "c", "d", "e", "f",
 
 function Letters(props) {
   const {word, inGame, gameOver, setGameOver, attempts, setAttempts, showUnderScore, setShowUnderScore, isClicked, setIsClicked} = props
-
+  let count = attempts
 function isInWord(letter){
-
   if(!isClicked.includes(letter)){
     if (word.includes(letter)){
     [...word].filter((element, index) => {
@@ -23,6 +22,7 @@ function isInWord(letter){
     setShowUnderScore([...showUnderScore])
   }
   else{
+    count++
     setAttempts(attempts + 1)
   }
     setIsClicked([...isClicked, letter])
@@ -30,9 +30,11 @@ function isInWord(letter){
   if(!showUnderScore.includes("_\t")) setGameOver(true)
 }
 
+console.log(attempts)
 function checkGameState(letter){
   if(!gameOver && inGame){
-    if(attempts === 6) {
+    if(attempts == 5) {
+      setAttempts(6)
       setGameOver(true)
       setShowUnderScore(word)
     }

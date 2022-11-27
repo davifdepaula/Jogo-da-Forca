@@ -10,9 +10,10 @@ function App() {
   const [inGame, setInGame] =  useState(false)
   const [gameOver, setGameOver] = useState(false)
   const [word, setWord] =  useState("")
+  const [kick, setKick] = useState("")
   const [showUnderScore, setShowUnderScore] = useState([])
   const [isClicked, setIsClicked] = useState([])
-
+  console.log("kick = ",kick)
   function choiceWord(){
     const index = Math.floor(Math.random() * (palavras.length - 1))
     setWord(palavras[index])
@@ -21,6 +22,7 @@ function App() {
 
   function resetStatus(){
     setAttempts(0)
+    setKick("")
     setIsClicked([])
     setGameOver(false)
     choiceWord()
@@ -66,6 +68,8 @@ function App() {
       />
       <Guess
       word = {word}
+      kick = {kick}
+      setKick = {setKick}
       setAttempts = {setAttempts}
       inGame = {inGame}
       gameOver = {gameOver}

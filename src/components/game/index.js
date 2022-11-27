@@ -5,7 +5,7 @@ import "./game.css"
 
 function Game(props) {
   const {attempts, word, showUnderScore, inGame, gameControl, gameOver} = props
-
+console.log(gameOver)
 function showString(){
   if(!gameOver){
     return(
@@ -14,10 +14,8 @@ function showString(){
       </div>
     )
   }
-
   else {
     if (attempts === 6){
-      console.log(attempts)
       return (
         <div className="red string" data-test="word"  data-answer={word}>
           {showUnderScore}
@@ -25,7 +23,6 @@ function showString(){
     )
     }
     else {
-      console.log(attempts)
       return (
         <div className="green string" data-test="word"  data-answer={word}>
           {showUnderScore}
