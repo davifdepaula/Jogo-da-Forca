@@ -4,7 +4,6 @@ import "./guess.css"
 
 function Guess(props) {
   const {word, setAttempts, kick, setKick, setShowUnderScore, inGame, gameOver, setGameOver } = props
-  console.log(word)
   function stateControl(){
     setShowUnderScore(word)
     setGameOver(true)
@@ -20,7 +19,7 @@ function Guess(props) {
       setAttempts(6)
       stateControl()
     }
-    console.log(kick)
+
   }
   return (
     <form onSubmit={handleSubmit}>

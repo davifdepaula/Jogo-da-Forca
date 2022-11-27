@@ -5,7 +5,7 @@ import "./game.css"
 
 function Game(props) {
   const {attempts, word, showUnderScore, inGame, gameControl, gameOver} = props
-console.log(gameOver)
+
 function showString(){
   if(!gameOver){
     return(

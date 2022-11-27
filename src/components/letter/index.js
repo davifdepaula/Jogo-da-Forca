@@ -1,4 +1,5 @@
 import React from 'react'
+import removeAccents   from 'remove-accents'
 import './letters.css'
 
 
@@ -13,10 +14,10 @@ function Letters(props) {
   let count = attempts
 function isInWord(letter){
   if(!isClicked.includes(letter)){
-    if (word.includes(letter)){
+    if(removeAccents(word).includes(letter)){
     [...word].filter((element, index) => {
-      if (element === letter){
-        showUnderScore[index] = letter
+      if (removeAccents(element) === letter){
+        showUnderScore[index] = element
       }
     })
     setShowUnderScore([...showUnderScore])
@@ -30,7 +31,6 @@ function isInWord(letter){
   if(!showUnderScore.includes("_\t")) setGameOver(true)
 }
 
-console.log(attempts)
 function checkGameState(letter){
   if(!gameOver && inGame){
     if(attempts == 5) {

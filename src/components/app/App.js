@@ -13,12 +13,13 @@ function App() {
   const [kick, setKick] = useState("")
   const [showUnderScore, setShowUnderScore] = useState([])
   const [isClicked, setIsClicked] = useState([])
-  console.log("kick = ",kick)
+  
   function choiceWord(){
     const index = Math.floor(Math.random() * (palavras.length - 1))
     setWord(palavras[index])
     setShowUnderScore(Array(palavras[index].length).fill("_\t"))
   }
+  console.log(word)
 
   function resetStatus(){
     setAttempts(0)
