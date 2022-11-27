@@ -3,9 +3,8 @@ import React, {useState} from 'react'
 import "./guess.css"
 
 function Guess(props) {
-  const {word, setAttempts, setShowUnderScore, setGameOver } = props
+  const {word, setAttempts, setShowUnderScore, inGame, gameOver, setGameOver } = props
   const [kick, setKick] = useState("")
-
   console.log(word)
   function stateControl(){
     setShowUnderScore(word)
@@ -28,10 +27,15 @@ function Guess(props) {
     <div className='kick'>
       <form onSubmit={handleSubmit}>
         Já sei a palavra! 
-        <input name="kick" type="text" value={kick} onChange={(e) => setKick(e.target.value)}
+        <input
+        disabled = {!inGame || gameOver}
+        name="kick" type="text" value={kick} onChange={(e) => setKick(e.target.value)}
         data-test="guess-input"
         />
-        <button type="submit" data-test="guess-button">Chutar</button>
+        <button
+        disabled = {!inGame || gameOver} 
+        type="submit" 
+        data-test="guess-button">Chutar</button>
       </form>
     </div>
   )

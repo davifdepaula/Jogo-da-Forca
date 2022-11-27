@@ -45,7 +45,7 @@ function checkGameState(letter){
         {alfabeto.map((letter, index) => {
             return (
                 <button 
-                disabled = {!inGame || gameOver} 
+                disabled = {(!inGame || gameOver) || isClicked.includes(letter)} 
                 key = {index}
                 onClick = {()=> checkGameState(letter)}
                 data-test="letter"

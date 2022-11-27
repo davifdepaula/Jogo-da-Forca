@@ -67,6 +67,8 @@ function App() {
       <Guess
       word = {word}
       setAttempts = {setAttempts}
+      inGame = {inGame}
+      gameOver = {gameOver}
       setGameOver = {setGameOver}
       setShowUnderScore = {setShowUnderScore}
        />
