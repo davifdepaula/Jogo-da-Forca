@@ -16,4 +16,5 @@
 
 .keyBoard button:disabled{
     cursor: not-allowed;
+    background-color: #798A9F;
 }
