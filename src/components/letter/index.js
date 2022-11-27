@@ -31,7 +31,7 @@ function isInWord(letter){
 }
 
 function checkGameState(letter){
-  if(!gameOver){
+  if(!gameOver && inGame){
     if(attempts === 6) {
       setGameOver(true)
       setShowUnderScore(word)
@@ -44,7 +44,7 @@ function checkGameState(letter){
     <div className='keyBoard'>
         {alfabeto.map((letter, index) => {
             return (
-                <button 
+                <button disable = {`${!inGame}`} 
                 key = {index}
                 onClick = {()=> checkGameState(letter)}
                 data-test="letter"
