@@ -3,7 +3,7 @@ import palavras from '../../palavras.js'
 import Game from '../game';
 import Guess from '../guess/index.js';
 import Letters from '../letter/index.js';
-import './App.css';
+import { Container } from './styles.js';
 
 function App() {
   const [attempts, setAttempts] = useState(0)
@@ -42,7 +42,7 @@ function App() {
 
 
   return (
-    <div className="App"> 
+    <Container> 
       <Game
         word = {word}
         attempts={attempts}
@@ -77,7 +77,7 @@ function App() {
       setGameOver = {setGameOver}
       setShowUnderScore = {setShowUnderScore}
        />
-    </div>
+    </Container>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-
-import "./guess.css"
+import { Container } from './styles.js'
+import "./styles.js"
 
 function Guess(props) {
   const {word, setAttempts, kick, setKick, setShowUnderScore, inGame, gameOver, setGameOver } = props
@@ -23,7 +23,7 @@ function Guess(props) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className='kick'>
+      <Container>
         Já sei a palavra! 
         <input
         disabled = {!inGame || gameOver}
@@ -34,7 +34,7 @@ function Guess(props) {
         disabled = {!inGame || gameOver} 
         type="submit" 
         data-test="guess-button">Chutar</button>
-      </div>
+      </Container>
     </form>
   )
 }

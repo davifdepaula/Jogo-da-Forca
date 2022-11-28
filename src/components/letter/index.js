@@ -1,6 +1,6 @@
 import React from 'react'
 import removeAccents   from 'remove-accents'
-import './letters.css'
+import { KeyBoard } from './styles'
 
 
 const alfabeto = ["a", "b", "c", "d", "e", "f", 
@@ -43,7 +43,7 @@ function checkGameState(letter){
 }
 
   return (
-    <div className='keyBoard'>
+    <KeyBoard>
         {alfabeto.map((letter, index) => {
             return (
                 <button 
@@ -55,7 +55,7 @@ function checkGameState(letter){
             )
         })}
 
-    </div>
+    </KeyBoard>
   )
 }
 

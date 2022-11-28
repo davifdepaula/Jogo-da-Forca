@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import palavras from '../../palavras.js'
-import "./game.css"
+
+import { Forca } from './styles.js'
+
 
 
 function Game(props) {
@@ -34,22 +36,22 @@ function showString(){
   function showImg(){
     if (!inGame){
       return (
-          <div className='forca'>
+          <Forca>
             <img data-test="game-image" src={`./assets/forca${attempts}.png`} alt="" /> 
             <button data-test="choose-word" onClick = {() => gameControl()}>Escolher Palavra</button>
-          </div>
+          </Forca>
       )}
 
     else{
         return (
-          <div className='forca'>
+          <Forca>
             <img src={`./assets/forca${attempts}.png`} alt = "img" data-test="game-image" />
             <div className='inGame'>
               <button data-test="choose-word" onClick = {() => gameControl()}>Escolher Palavra</button>
               {showString()}
             </div>
 
-          </div>
+          </Forca>
         )}
   }
   return (
