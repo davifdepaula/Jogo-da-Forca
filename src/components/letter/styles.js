@@ -19,4 +19,11 @@ export const KeyBoard = styled.div`
         cursor: not-allowed;
         background-color: #798A9F;
     }
+
+    @media (max-width: 500px){
+        button{
+            width: 30px;
+            height: 30px;
+        }
+    }
 `

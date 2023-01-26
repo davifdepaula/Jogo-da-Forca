@@ -42,42 +42,43 @@ function App() {
 
 
   return (
-    <Container> 
-      <Game
-        word = {word}
-        attempts={attempts}
-        showUnderScore={showUnderScore}
-        inGame = {inGame}
-        gameControl = {gameControl}
-        gameOver = {gameOver}
-        isClicked = {isClicked}
-        setIsClicked = {setIsClicked}
-      />
+    <>
+      <Container /> 
+        <Game
+          word = {word}
+          attempts={attempts}
+          showUnderScore={showUnderScore}
+          inGame = {inGame}
+          gameControl = {gameControl}
+          gameOver = {gameOver}
+          isClicked = {isClicked}
+          setIsClicked = {setIsClicked}
+        />
 
-      <Letters 
+        <Letters 
+          word = {word}
+          inGame = {inGame}
+          setInGame = {setInGame}
+          gameOver = {gameOver}
+          setGameOver = {setGameOver}
+          attempts={attempts}
+          setAttempts = {setAttempts}
+          showUnderScore={showUnderScore}
+          setShowUnderScore = {setShowUnderScore}
+          isClicked = {isClicked}
+          setIsClicked = {setIsClicked}
+        />
+        <Guess
         word = {word}
+        kick = {kick}
+        setKick = {setKick}
+        setAttempts = {setAttempts}
         inGame = {inGame}
-        setInGame = {setInGame}
         gameOver = {gameOver}
         setGameOver = {setGameOver}
-        attempts={attempts}
-        setAttempts = {setAttempts}
-        showUnderScore={showUnderScore}
         setShowUnderScore = {setShowUnderScore}
-        isClicked = {isClicked}
-        setIsClicked = {setIsClicked}
-      />
-      <Guess
-      word = {word}
-      kick = {kick}
-      setKick = {setKick}
-      setAttempts = {setAttempts}
-      inGame = {inGame}
-      gameOver = {gameOver}
-      setGameOver = {setGameOver}
-      setShowUnderScore = {setShowUnderScore}
-       />
-    </Container>
+        />
+      </>
   )
 }
 

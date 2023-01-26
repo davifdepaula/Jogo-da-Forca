@@ -39,4 +39,28 @@ export const Forca = styled.div`
     .green {
         color: green
     }
+
+    @media (max-width: 600px){
+        align-items: center;
+        img {
+            width: 150px;
+            margin: 10px;
+        }
+
+        .inGame {
+            width: 100px;
+            margin-right: 10px;
+            button {
+                height: 30px;
+                font-size: 10px;
+            }
+        }
+
+        button{
+            height: 30px;
+            width: 100px;
+            font-size: 10px;
+            margin-right: 10px;
+        }
+    }
 `

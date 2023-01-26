@@ -27,6 +27,27 @@ export const Container = styled.div`
      button:disabled{
         cursor: not-allowed;
     }
+
+    @media (max-width: 500px){
+        font-size: 12px;
+        input {
+            width: 100px;
+        }
+
+        button, input {
+            font-size: 12px;
+    }
+
+    @media (max-width: 600px){
+        font-size: 15px;
+        margin: auto 5px;
+        input {
+            width: 150px;
+        }
+
+        button, input {
+            font-size: 15px;
+    }
     
 
 `
